@@ -3,7 +3,6 @@ const MAPA_ELEMENTO = document.getElementById("mapa");
 const RAIO_METROS = 200;
 
 let mapa;
-let circulo;
 let marcador;
 
 function atualizarStatus(mensagem, ehErro = false) {
@@ -42,18 +41,7 @@ function aoObterLocalizacao(posicao) {
     title: "Você está aqui",
   });
 
-  circulo = new google.maps.Circle({
-    map: mapa,
-    center: coordenadas,
-    radius: RAIO_METROS,
-    fillColor: "#3b82f6",
-    fillOpacity: 0.25,
-    strokeColor: "#1d4ed8",
-    strokeOpacity: 0.8,
-    strokeWeight: 2,
-  });
-
-  atualizarStatus("Localização encontrada! O círculo mostra um raio de 200 metros.");
+  atualizarStatus("Localização encontrada!");
 }
 
 function aoFalharLocalizacao(erro) {
